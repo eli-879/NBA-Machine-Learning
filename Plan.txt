@@ -1,0 +1,59 @@
+Want to get data to predict outcome of a NBA regular season game
+
+Have each seasons detail and brief stats - must combine them into 1 huge dataset
+
+What things to use to predict a win/loss?
+
+[date, team, rank, gamesW, gamesL, gamesB, ptsFor, ptsAgainst, homeW, awayW, last5, last10, ptsScoreAvg, ptsAllowAvg, daysOff, teamPts]
+
+y_data - [1 for home win or 0 for away win]
+
+
+#Gather dataset into home/away for each game for each team
+"""
+array = basic_data.values
+game_scores = array[:, 2:6]
+num_home_wins = 0
+
+for game in game_scores:
+    if game[1] > game[3]:
+        num_home_wins += 1
+
+home_win_percentage = num_home_wins / len(game_scores) * 100
+
+print(home_win_percentage)
+"""
+
+team_dict = {"Atlanta Hawks" : "ATL",
+             "Brooklyn Nets" : "BKN",
+             "Boston Celtics" : "BOS",
+             "Charlotte Hornets" : "CHA",
+             "Charlotte Bobcats" : "CHA",
+             "Chicago Bulls" : "CHI",
+             "Cleveland Cavaliers" : "CLE",
+             "Dallas Mavericks" : "DAL",
+             "Denver Nuggets" : "DEN",
+             "Detroit Pistons" : "DET",
+             "Golden State Warriors" : "GS",
+             "Houston Rockets" : "HOU",
+             "Indiana Pacers" : "IND",
+             "Los Angeles Clippers" : "LAC",
+             "Los Angeles Lakers" : "LAL",
+             "Memphis Grizzlies" : "MEM",
+             "Miami Heat" : "MIA",
+             "Milwaukee Bucks" : "MIL",
+             "Minnesota Timberwolves" : "MIN",
+             "New Orleans Pelicans" : "NO",
+             "New Orleans Hornets" : "NO",
+             "New York Knicks" : "NY",
+             "Oklahoma City Thunder" : "OKC",
+             "Orlando Magic" : "ORL",
+             "Philadelphia 76ers" : "PHI",
+             "Phoenix Suns" : "PHO",
+             "Portland Trail Blazers" : "POR",
+             "San Antonio Spurs" : "SA",
+             "Sacramento Kings" : "SAC",
+             "Toronto Raptors" : "TOR",
+             "Utah Jazz" : "UTA",
+             "Washington Wizards" : "WAS"
+            }
